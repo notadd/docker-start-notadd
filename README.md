@@ -1,1 +1,16 @@
-# docker-start-notadd
+
+
+## 单机Docker 部署说明
+
+本地开发环境一般建议用 pm2 启动多个服务。
+
+docker-compose 适合测试和快速部署线上单机环境。
+
+## k8s 集群部署说明
+
+k8s 集群部署和维护的初始成本较高，强烈建议使用 腾讯云/阿里云 等 k8s 云服务进行部署。
+
+### 服务器部署
+
+由于国内网络的特殊原因，请使用此工具部署：
+https://github.com/gjmzj/kubeasz

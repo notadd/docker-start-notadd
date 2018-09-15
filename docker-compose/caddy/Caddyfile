@@ -1,0 +1,22 @@
+0.0.0.0:80 {
+    proxy /node1 node1_api:3000 {
+    without /node1
+    header_upstream Host {host}
+    header_upstream X-Real-IP {remote}
+    header_upstream X-Forwarded-For {remote}
+    header_upstream X-Forwarded-Proto {scheme}
+    }
+    proxy /node2 node2_api:3001 {
+    without /node2
+    header_upstream Host {host}
+    header_upstream X-Real-IP {remote}
+    header_upstream X-Forwarded-For {remote}
+    header_upstream X-Forwarded-Proto {scheme}
+    }
+    ## 本地自签名证书
+    # tls  self_signed
+    ## 线上自动申请证书
+    # tls {
+    #   key_type p384
+    # }
+}
